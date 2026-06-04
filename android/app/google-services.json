@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "863606735858",
+    "project_id": "kbc-quiz-app-9b5ae",
+    "storage_bucket": "kbc-quiz-app-9b5ae.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:863606735858:android:a0498d30d7dac890f1a16b",
+        "android_client_info": {
+          "package_name": "com.example.kbc_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdHz0iVVt4N1_vgwnxr5iaseIYtDjZ0uY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
