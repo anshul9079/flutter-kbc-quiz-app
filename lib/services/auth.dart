@@ -33,7 +33,9 @@ Future<User?> signInWithGoogle() async
   final User? currentUser = await _auth.currentUser;
   assert(currentUser!.uid == user!.uid);
   print(user);
-   firedb().createnewuser(user!.displayName.toString(), user!.email.toString(), user!.photoURL.toString(), user!.uid.toString());
+  print("Before Firestore Call");
+  await firedb().createnewuser(user!.displayName.toString(), user.email.toString(), user.photoURL.toString(), user.uid.toString());
+  print("After Firestore Call");
   return user;
 
   }catch(e){

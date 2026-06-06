@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kbc_app/services/auth.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -24,7 +25,9 @@ class _LoginState extends State<Login> {
             ),
 
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () async {
+                await signInWithGoogle();
+              },
               child: Text("Continue With Google"),
             ),
           ],
