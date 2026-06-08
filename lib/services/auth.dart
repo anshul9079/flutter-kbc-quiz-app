@@ -1,51 +1,34 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:kbc_app/services/firedb.dart';
-
-
+import 'firedb.dart';
 final FirebaseAuth _auth = FirebaseAuth.instance;
 final GoogleSignIn googleSignIn = GoogleSignIn();
 
-//SIGN IN KA Function
-Future<User?> signInWithGoogle() async
-{
-  try{
+Future<User?> signWithGoogle() async{
+
+  // try{
 
 
-  //SIGNING IN WITH GOOGLE
-  final GoogleSignInAccount? googleSignInAccount = await googleSignIn.signIn();
-  final GoogleSignInAuthentication googleSignInAuthentication = await googleSignInAccount!.authentication;
+  final GoogleSignInAccount? googlesignInAccount = await googleSignIn.signIn();
+  final GoogleSignInAuthentication googleSignInAuthentication = await googlesignInAccount!.authentication;
 
-  //CREATING CREDENTIAL FOR FIREBASE
-  final AuthCredential credential = GoogleAuthProvider.credential(
-    idToken: googleSignInAuthentication.idToken,
-    accessToken: googleSignInAuthentication.accessToken
-  );
+  final AuthCredential credential = GoogleAuthProvider.credential(idToken: googleSignInAuthentication.idToken , accessToken: googleSignInAuthentication.accessToken);
 
-  //SIGNING IN WITH CREDENTIAL & MAKING A USER IN FIREBASE  AND GETTING USER CLASS
-  final userCredential  = await _auth.signInWithCredential(credential);
-  final User? user = userCredential.user;
+  final usercredential = await _auth.signInWithCredential(credential);
 
-  //CHECKING IS ON
+  final User? user = usercredential.user;
+
   assert(!user!.isAnonymous);
+  // ignore: unnecessary_null_comparison
   assert(await user!.getIdToken() != null);
 
-  final User? currentUser = await _auth.currentUser;
+  final User? currentUser = _auth.currentUser;
   assert(currentUser!.uid == user!.uid);
+await FireDB().createNewUser(user!.displayName.toString(), user.email.toString(), user.photoURL.toString() , user.uid.toString());
   print(user);
-  print("Before Firestore Call");
-  await firedb().createnewuser(user!.displayName.toString(), user.email.toString(), user.photoURL.toString(), user.uid.toString());
-  print("After Firestore Call");
-  return user;
-
-  }catch(e){
-    print(e);
-  }
-
+  // }catch(e){
+  //   print("ERROR OCCURED IN SIGN IN");
+  //   print(e);
+  // }
+  
 }
-
-// void signOut() async
-// {
-//   await googleSignIn.signOut();
-//   await _auth.signOut();
-// }

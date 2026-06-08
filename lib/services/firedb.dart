@@ -1,45 +1,47 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-class firedb {
+class FireDB{
   final FirebaseAuth _auth = FirebaseAuth.instance;
+  createNewUser(String name , String email , String photoUrl , String uid) async{
+    final User? current_user = _auth.currentUser;
+  if(await getUser()){
+    print("USER ALREADY EXISTS");
+  }else{
+    await FirebaseFirestore.instance.collection("users").doc(current_user!.uid).set(
+      {
+        "name" : name,
+        "email" : email,
+        "photoUrl" : photoUrl,
+        "money" : "55555"
+      }
+    ).then((value)  {
+      print("User Registered Successfully");
+ 
+    });
 
-  Future<void> createnewuser(
-    String name,
-    String email,
-    String photourl,
-    String userid,
-  ) async {
-    try {
-      print("========== FIRESTORE START ==========");
+  }
 
-      final User? currentuser = _auth.currentUser;
+  }
 
-      print("Current User : $currentuser");
-      print("UID : ${currentuser?.uid}");
-      print("Name : $name");
-      print("Email : $email");
 
-      print("STEP 1");
+  Future<bool> getUser() async{
+    final User? current_user = _auth.currentUser;
+    String user = "";
 
-      await FirebaseFirestore.instance
-          .collection("users")
-          .doc(userid)
-          .set({
-        "name": name,
-        "email": email,
-        "photourl": photourl,
-        "money": "50000",
-      });
-
-      print("STEP 2");
-      print("USER REGISTERED SUCCESSFULLY");
-      print("========== FIRESTORE END ==========");
-    } catch (e, stackTrace) {
-      print("========== FIRESTORE ERROR ==========");
-      print(e);
-      print(stackTrace);
-      print("====================================");
+    await FirebaseFirestore.instance.collection("users").doc("sjfsjfksjmn").get().then((value){
+      user = value.data().toString();
+    });
+    if(user.toString() == "null"){
+      return false;
+    }else{
+      return true;
     }
   }
+
+
+
+
+
+
 }

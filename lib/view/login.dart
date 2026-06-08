@@ -26,7 +26,7 @@ class _LoginState extends State<Login> {
 
             ElevatedButton(
               onPressed: () async {
-                await signInWithGoogle();
+                await signWithGoogle();
               },
               child: Text("Continue With Google"),
             ),
