@@ -12,7 +12,20 @@
           "package_name": "com.example.kbc_app"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "863606735858-t62tikmai9dkt515m3mdh4406se2uog3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kbc_app",
+            "certificate_hash": "dd76294c9b966f409ad977e1cd04f6f59fd0574b"
+          }
+        },
+        {
+          "client_id": "863606735858-u45euiga7j7bc9uquh0u6iu5krqmeb1m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyDdHz0iVVt4N1_vgwnxr5iaseIYtDjZ0uY"
@@ -20,7 +33,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "863606735858-u45euiga7j7bc9uquh0u6iu5krqmeb1m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
