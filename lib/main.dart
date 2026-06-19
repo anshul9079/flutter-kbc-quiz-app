@@ -1,9 +1,10 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:kbc_app/home.dart';
-import 'package:kbc_app/services/quizintro.dart';
-import 'package:kbc_app/view/login.dart';
+// import 'package:kbc_app/home.dart';
+// import 'package:kbc_app/services/quizintro.dart';
+// import 'package:kbc_app/view/login.dart';
 import 'package:kbc_app/view/quix_ques.dart';
+import 'package:kbc_app/view/winner.dart';
 import 'package:overlay_support/overlay_support.dart';
 
 Future<void> main() async {
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         dialogBackgroundColor: Colors.purple,
       ),
-      home: QuizPage(),
+      home: Winner(),
     );
   }
 }
