@@ -71,47 +71,255 @@
 //       ),
 //     );
 //   }
-// }
+// }   my design
 
+// import 'package:flutter/material.dart';
 
+// class Profile extends StatelessWidget {
+//   const Profile({super.key});
 
+//   @override
+//   Widget build(BuildContext context) {
+//     List leaderboard = [
+//       {"name": "Anshul", "amount": "₹50,000"},
+//       {"name": "Rahul", "amount": "₹40,000"},
+//       {"name": "Aman", "amount": "₹30,000"},
+//       {"name": "Rohit", "amount": "₹20,000"},
+//       {"name": "Vikas", "amount": "₹10,000"},
+//     ];
+
+//     return Scaffold(
+//       backgroundColor: const Color(0xff0D1025),
+
+//       appBar: AppBar(
+//         backgroundColor: Colors.transparent,
+//         elevation: 0,
+//         centerTitle: true,
+//         iconTheme: const IconThemeData(color: Colors.amber),
+//         title: const Text(
+//           "Profile",
+//           style: TextStyle(
+//             color: Colors.amber,
+//             fontSize: 26,
+//             fontWeight: FontWeight.bold,
+//           ),
+//         ),
+//       ),
+
+//       body: SingleChildScrollView(
+//         child: Column(
+//           children: [
+//             const SizedBox(height: 20),
+
+//             /// PROFILE IMAGE
+//             Container(
+//               decoration: BoxDecoration(
+//                 shape: BoxShape.circle,
+//                 border: Border.all(color: Colors.amber, width: 4),
+//                 boxShadow: [
+//                   BoxShadow(
+//                     color: Colors.amber.withOpacity(.4),
+//                     blurRadius: 20,
+//                   ),
+//                 ],
+//               ),
+//               child: const CircleAvatar(
+//                 radius: 60,
+//                 backgroundImage: AssetImage("assets/images/image.png"),
+//               ),
+//             ),
+
+//             const SizedBox(height: 15),
+
+//             const Text(
+//               "Anshul Soni",
+//               style: TextStyle(
+//                 color: Colors.white,
+//                 fontSize: 28,
+//                 fontWeight: FontWeight.bold,
+//               ),
+//             ),
+
+//             const SizedBox(height: 5),
+
+//             const Text(
+//               "Flutter Developer",
+//               style: TextStyle(color: Colors.white70, fontSize: 18),
+//             ),
+
+//             const SizedBox(height: 25),
+
+//             /// TOTAL WINNING CARD
+//             Container(
+//               margin: const EdgeInsets.symmetric(horizontal: 20),
+//               padding: const EdgeInsets.all(20),
+//               decoration: BoxDecoration(
+//                 gradient: const LinearGradient(
+//                   colors: [Color(0xff352F73), Color(0xff1A1F3A)],
+//                 ),
+//                 borderRadius: BorderRadius.circular(25),
+//                 border: Border.all(color: Colors.amber, width: 2),
+//               ),
+//               child: const Column(
+//                 children: [
+//                   Text(
+//                     "Total Winning",
+//                     style: TextStyle(color: Colors.white70, fontSize: 18),
+//                   ),
+//                   SizedBox(height: 10),
+//                   Text(
+//                     "₹1,20,000",
+//                     style: TextStyle(
+//                       color: Colors.amber,
+//                       fontSize: 40,
+//                       fontWeight: FontWeight.bold,
+//                     ),
+//                   ),
+//                 ],
+//               ),
+//             ),
+
+//             const SizedBox(height: 25),
+
+//             /// STATS
+//             Row(
+//               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+//               children: [
+//                 statCard("44", "Level"),
+//                 statCard("#1", "Rank"),
+//                 statCard("18", "Games"),
+//               ],
+//             ),
+
+//             const SizedBox(height: 30),
+
+//             const Text(
+//               "Leaderboard",
+//               style: TextStyle(
+//                 color: Colors.amber,
+//                 fontSize: 26,
+//                 fontWeight: FontWeight.bold,
+//               ),
+//             ),
+
+//             const SizedBox(height: 20),
+
+//             ListView.builder(
+//               shrinkWrap: true,
+//               physics: const NeverScrollableScrollPhysics(),
+//               itemCount: leaderboard.length,
+//               itemBuilder: (context, index) {
+//                 return Container(
+//                   margin: const EdgeInsets.symmetric(
+//                     horizontal: 20,
+//                     vertical: 8,
+//                   ),
+//                   decoration: BoxDecoration(
+//                     color: const Color(0xff1A1F3A),
+//                     borderRadius: BorderRadius.circular(20),
+//                     border: Border.all(color: Colors.amber),
+//                   ),
+//                   child: ListTile(
+//                     leading: CircleAvatar(
+//                       backgroundColor: Colors.amber,
+//                       child: Text(
+//                         "${index + 1}",
+//                         style: const TextStyle(
+//                           color: Colors.black,
+//                           fontWeight: FontWeight.bold,
+//                         ),
+//                       ),
+//                     ),
+//                     title: Text(
+//                       leaderboard[index]["name"],
+//                       style: const TextStyle(
+//                         color: Colors.white,
+//                         fontWeight: FontWeight.bold,
+//                       ),
+//                     ),
+//                     trailing: Text(
+//                       leaderboard[index]["amount"],
+//                       style: const TextStyle(
+//                         color: Colors.amber,
+//                         fontWeight: FontWeight.bold,
+//                         fontSize: 18,
+//                       ),
+//                     ),
+//                   ),
+//                 );
+//               },
+//             ),
+
+//             const SizedBox(height: 30),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+
+//   static Widget statCard(String value, String title) {
+//     return Container(
+//       width: 95,
+//       padding: const EdgeInsets.all(15),
+//       decoration: BoxDecoration(
+//         color: const Color(0xff352F73),
+//         borderRadius: BorderRadius.circular(20),
+//         border: Border.all(color: Colors.amber),
+//       ),
+//       child: Column(
+//         children: [
+//           Text(
+//             value,
+//             style: const TextStyle(
+//               color: Colors.amber,
+//               fontSize: 24,
+//               fontWeight: FontWeight.bold,
+//             ),
+//           ),
+//           const SizedBox(height: 5),
+//           Text(title, style: const TextStyle(color: Colors.white)),
+//         ],
+//       ),
+//     );
+//   }
+// }  design 1
 
 import 'package:flutter/material.dart';
 
-class Profile extends StatefulWidget {
+class Profile extends StatelessWidget {
   const Profile({super.key});
 
   @override
-  State<Profile> createState() => _ProfileState();
-}
-
-class _ProfileState extends State<Profile> {
-  List players = [
-    {"name": "Anshul", "score": 50000},
-    {"name": "Rahul", "score": 40000},
-    {"name": "Aman", "score": 30000},
-    {"name": "Rohit", "score": 20000},
-    {"name": "Vikas", "score": 10000},
-  ];
-
-  @override
   Widget build(BuildContext context) {
+    List amounts = [
+      "₹7 Crore",
+      "₹1 Crore",
+      "₹50 Lakh",
+      "₹25 Lakh",
+      "₹12.5 Lakh",
+      "₹6.4 Lakh",
+      "₹3.2 Lakh",
+      "₹1.6 Lakh",
+      "₹80,000",
+      "₹40,000",
+      "₹20,000",
+      "₹10,000",
+    ];
+
     return Scaffold(
-      backgroundColor: const Color(0xff0D1025),
+      backgroundColor: const Color(0xff0B1026),
 
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
-        iconTheme: const IconThemeData(
-          color: Colors.amber,
-        ),
+        iconTheme: const IconThemeData(color: Colors.amber),
         title: const Text(
-          "Profile",
+          "My Profile",
           style: TextStyle(
             color: Colors.amber,
-            fontSize: 24,
             fontWeight: FontWeight.bold,
+            fontSize: 28,
           ),
         ),
       ),
@@ -119,115 +327,118 @@ class _ProfileState extends State<Profile> {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            const SizedBox(height: 20),
 
-            /// PROFILE CARD
+            /// PROFILE IMAGE
             Container(
-              margin: const EdgeInsets.all(20),
+              padding: const EdgeInsets.all(5),
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                border: Border.all(color: Colors.amber, width: 4),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.amber.withOpacity(0.4),
+                    blurRadius: 30,
+                  ),
+                ],
+              ),
+              child: const CircleAvatar(
+                radius: 60,
+                backgroundImage: AssetImage("assets/images/image.png"),
+              ),
+            ),
+
+            const SizedBox(height: 15),
+
+            const Text(
+              "ANSHUL SONI",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            const SizedBox(height: 5),
+
+            const Text(
+              "KBC Champion",
+              style: TextStyle(color: Colors.amber, fontSize: 18),
+            ),
+
+            const SizedBox(height: 25),
+
+            /// WINNING CARD
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 20),
               padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
                 gradient: const LinearGradient(
-                  colors: [
-                    Color(0xff352F73),
-                    Color(0xff1A1F3A),
-                  ],
+                  colors: [Color(0xff352F73), Color(0xff1A1F3A)],
                 ),
                 borderRadius: BorderRadius.circular(25),
-                border: Border.all(
-                  color: Colors.amber,
-                  width: 2,
-                ),
+                border: Border.all(color: Colors.amber, width: 2),
               ),
-
-              child: Column(
+              child: const Column(
                 children: [
-
-                  const CircleAvatar(
-                    radius: 50,
-                    backgroundImage: AssetImage(
-                      "assets/images/image.png",
-                    ),
+                  Text(
+                    "TOTAL WINNING",
+                    style: TextStyle(color: Colors.white70, fontSize: 18),
                   ),
 
-                  const SizedBox(height: 15),
+                  SizedBox(height: 10),
 
-                  const Text(
-                    "Anshul Soni",
+                  Text(
+                    "₹1,20,000",
                     style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 24,
+                      color: Colors.amber,
+                      fontSize: 40,
                       fontWeight: FontWeight.bold,
                     ),
-                  ),
-
-                  const SizedBox(height: 10),
-
-                  const Text(
-                    "Flutter Developer",
-                    style: TextStyle(
-                      color: Colors.white70,
-                    ),
-                  ),
-
-                  const SizedBox(height: 25),
-
-                  Row(
-                    mainAxisAlignment:
-                        MainAxisAlignment.spaceEvenly,
-                    children: [
-
-                      Container(
-                        padding: const EdgeInsets.all(15),
-                        decoration: BoxDecoration(
-                          color: Colors.amber,
-                          borderRadius:
-                              BorderRadius.circular(15),
-                        ),
-                        child: const Column(
-                          children: [
-                            Text(
-                              "44",
-                              style: TextStyle(
-                                fontSize: 22,
-                                fontWeight:
-                                    FontWeight.bold,
-                              ),
-                            ),
-                            Text("Level"),
-                          ],
-                        ),
-                      ),
-
-                      Container(
-                        padding: const EdgeInsets.all(15),
-                        decoration: BoxDecoration(
-                          color: Colors.amber,
-                          borderRadius:
-                              BorderRadius.circular(15),
-                        ),
-                        child: const Column(
-                          children: [
-                            Text(
-                              "#1",
-                              style: TextStyle(
-                                fontSize: 22,
-                                fontWeight:
-                                    FontWeight.bold,
-                              ),
-                            ),
-                            Text("Rank"),
-                          ],
-                        ),
-                      ),
-                    ],
                   ),
                 ],
               ),
             ),
 
-            const SizedBox(height: 10),
+            const SizedBox(height: 25),
+
+            /// STATS
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                statCard("44", "Level"),
+                statCard("#1", "Rank"),
+                statCard("18", "Games"),
+              ],
+            ),
+
+            const SizedBox(height: 30),
+
+            /// BADGES
+            const Text(
+              "Achievements",
+              style: TextStyle(
+                color: Colors.amber,
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            const SizedBox(height: 15),
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: const [
+                Icon(Icons.emoji_events, color: Colors.amber, size: 40),
+                Icon(Icons.workspace_premium, color: Colors.orange, size: 40),
+                Icon(Icons.star, color: Colors.yellow, size: 40),
+              ],
+            ),
+
+            const SizedBox(height: 30),
 
             const Text(
-              "Leaderboard",
+              "Money Ladder",
               style: TextStyle(
                 color: Colors.amber,
                 fontSize: 24,
@@ -239,54 +450,30 @@ class _ProfileState extends State<Profile> {
 
             ListView.builder(
               shrinkWrap: true,
-              physics:
-                  const NeverScrollableScrollPhysics(),
-              itemCount: players.length,
+              physics: const NeverScrollableScrollPhysics(),
+              itemCount: amounts.length,
               itemBuilder: (context, index) {
+                bool current = index == 8;
+
                 return Container(
                   margin: const EdgeInsets.symmetric(
                     horizontal: 20,
-                    vertical: 8,
+                    vertical: 5,
                   ),
-
                   decoration: BoxDecoration(
-                    color: const Color(0xff1A1F3A),
-                    borderRadius:
-                        BorderRadius.circular(20),
-                    border: Border.all(
-                      color: Colors.amber,
-                    ),
+                    color: current ? Colors.amber : const Color(0xff1A1F3A),
+                    borderRadius: BorderRadius.circular(15),
                   ),
-
                   child: ListTile(
-                    leading: CircleAvatar(
-                      backgroundColor: Colors.amber,
-                      child: Text(
-                        "${index + 1}",
-                        style: const TextStyle(
-                          color: Colors.black,
-                          fontWeight:
-                              FontWeight.bold,
-                        ),
-                      ),
+                    leading: Icon(
+                      current ? Icons.star : Icons.lock,
+                      color: current ? Colors.black : Colors.white,
                     ),
-
                     title: Text(
-                      players[index]["name"],
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontWeight:
-                            FontWeight.bold,
-                      ),
-                    ),
-
-                    trailing: Text(
-                      "₹${players[index]["score"]}",
-                      style: const TextStyle(
-                        color: Colors.amber,
-                        fontSize: 18,
-                        fontWeight:
-                            FontWeight.bold,
+                      amounts[index],
+                      style: TextStyle(
+                        color: current ? Colors.black : Colors.white,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
@@ -294,9 +481,35 @@ class _ProfileState extends State<Profile> {
               },
             ),
 
-            const SizedBox(height: 20),
+            const SizedBox(height: 30),
           ],
         ),
+      ),
+    );
+  }
+
+  static Widget statCard(String value, String title) {
+    return Container(
+      width: 95,
+      padding: const EdgeInsets.all(15),
+      decoration: BoxDecoration(
+        color: const Color(0xff1A1F3A),
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(color: Colors.amber),
+      ),
+      child: Column(
+        children: [
+          Text(
+            value,
+            style: const TextStyle(
+              color: Colors.amber,
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const SizedBox(height: 5),
+          Text(title, style: const TextStyle(color: Colors.white)),
+        ],
       ),
     );
   }
