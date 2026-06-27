@@ -1,18 +1,22 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:kbc_app/services/localdb.dart';
 import 'firedb.dart';
+
 final FirebaseAuth _auth = FirebaseAuth.instance;
 final GoogleSignIn googleSignIn = GoogleSignIn();
 
-Future<User?> signWithGoogle() async{
-
+Future<User?> signWithGoogle() async {
   // try{
 
-
   final GoogleSignInAccount? googlesignInAccount = await googleSignIn.signIn();
-  final GoogleSignInAuthentication googleSignInAuthentication = await googlesignInAccount!.authentication;
+  final GoogleSignInAuthentication googleSignInAuthentication =
+      await googlesignInAccount!.authentication;
 
-  final AuthCredential credential = GoogleAuthProvider.credential(idToken: googleSignInAuthentication.idToken , accessToken: googleSignInAuthentication.accessToken);
+  final AuthCredential credential = GoogleAuthProvider.credential(
+    idToken: googleSignInAuthentication.idToken,
+    accessToken: googleSignInAuthentication.accessToken,
+  );
 
   final usercredential = await _auth.signInWithCredential(credential);
 
@@ -24,11 +28,25 @@ Future<User?> signWithGoogle() async{
 
   final User? currentUser = _auth.currentUser;
   assert(currentUser!.uid == user!.uid);
-await FireDB().createNewUser(user!.displayName.toString(), user.email.toString(), user.photoURL.toString() , user.uid.toString());
+  await FireDB().createNewUser(
+    user!.displayName.toString(),
+    user.email.toString(),
+    user.photoURL.toString(),
+    user.uid.toString(),
+  );
+  await Localdb.saveuserid(user.uid);
+  await Localdb.savename(user.displayName.toString());
+  await Localdb.saveimageurl(user.photoURL.toString());
   print(user);
   // }catch(e){
   //   print("ERROR OCCURED IN SIGN IN");
   //   print(e);
   // }
-  
+}
+
+Future<String> signOut() async {
+  await googleSignIn.signOut();
+  await _auth.signOut();
+  await Localdb.saveuserid("null");
+  return "success";
 }
