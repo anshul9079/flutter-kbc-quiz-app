@@ -378,8 +378,14 @@ class _HomeState extends State<Home> {
   }
 }
 
+
+
+
+
+
 // import 'package:carousel_slider/carousel_slider.dart';
 // import 'package:flutter/material.dart';
+// import 'profile.dart';
 
 // class Home extends StatelessWidget {
 //   Home({super.key});
@@ -395,9 +401,100 @@ class _HomeState extends State<Home> {
 //     return Scaffold(
 //       backgroundColor: const Color(0xff0D1025),
 
+//       drawer: Drawer(
+//         backgroundColor: const Color(0xff1A1F3A),
+//         child: ListView(
+//           children: [
+//             UserAccountsDrawerHeader(
+//               decoration: const BoxDecoration(
+//                 color: Color(0xff352F73),
+//               ),
+//               accountName: const Text(
+//                 "Anshul Soni",
+//                 style: TextStyle(
+//                   fontWeight: FontWeight.bold,
+//                   fontSize: 18,
+//                 ),
+//               ),
+//               accountEmail: const Text(
+//                 "anshul@gmail.com",
+//               ),
+//               currentAccountPicture: const CircleAvatar(
+//                 backgroundImage:
+//                     AssetImage("assets/images/image.png"),
+//               ),
+//             ),
+
+//             ListTile(
+//               leading: const Icon(
+//                 Icons.home,
+//                 color: Colors.amber,
+//               ),
+//               title: const Text(
+//                 "Home",
+//                 style: TextStyle(color: Colors.white),
+//               ),
+//               onTap: () {
+//                 Navigator.pop(context);
+//               },
+//             ),
+
+//             ListTile(
+//               leading: const Icon(
+//                 Icons.person,
+//                 color: Colors.amber,
+//               ),
+//               title: const Text(
+//                 "Profile",
+//                 style: TextStyle(color: Colors.white),
+//               ),
+//               onTap: () {
+//                 Navigator.push(
+//                   context,
+//                   MaterialPageRoute(
+//                     builder: (_) => const Profile(),
+//                   ),
+//                 );
+//               },
+//             ),
+
+//             ListTile(
+//               leading: const Icon(
+//                 Icons.info,
+//                 color: Colors.amber,
+//               ),
+//               title: const Text(
+//                 "About",
+//                 style: TextStyle(color: Colors.white),
+//               ),
+//               onTap: () {},
+//             ),
+
+//             const Divider(color: Colors.white24),
+
+//             ListTile(
+//               leading: const Icon(
+//                 Icons.logout,
+//                 color: Colors.red,
+//               ),
+//               title: const Text(
+//                 "Logout",
+//                 style: TextStyle(color: Colors.white),
+//               ),
+//               onTap: () {
+//                 // Logout Code
+//               },
+//             ),
+//           ],
+//         ),
+//       ),
+
 //       appBar: AppBar(
 //         backgroundColor: Colors.transparent,
 //         elevation: 0,
+//         iconTheme: const IconThemeData(
+//           color: Colors.amber,
+//         ),
 //         centerTitle: true,
 //         title: const Text(
 //           "KBC Quiz",
@@ -427,7 +524,9 @@ class _HomeState extends State<Home> {
 
 //             const Text(
 //               "Let's win some rewards today",
-//               style: TextStyle(color: Colors.white70),
+//               style: TextStyle(
+//                 color: Colors.white70,
+//               ),
 //             ),
 
 //             const SizedBox(height: 20),
@@ -436,19 +535,26 @@ class _HomeState extends State<Home> {
 //               items: banners
 //                   .map(
 //                     (e) => ClipRRect(
-//                       borderRadius: BorderRadius.circular(20),
+//                       borderRadius:
+//                           BorderRadius.circular(20),
 //                       child: Stack(
 //                         fit: StackFit.expand,
 //                         children: [
-//                           Image.network(e, fit: BoxFit.cover),
-//                           Container(color: Colors.black38),
+//                           Image.network(
+//                             e,
+//                             fit: BoxFit.cover,
+//                           ),
+//                           Container(
+//                             color: Colors.black38,
+//                           ),
 //                           const Center(
 //                             child: Text(
 //                               "Play & Win",
 //                               style: TextStyle(
 //                                 color: Colors.white,
 //                                 fontSize: 26,
-//                                 fontWeight: FontWeight.bold,
+//                                 fontWeight:
+//                                     FontWeight.bold,
 //                               ),
 //                             ),
 //                           ),
@@ -480,7 +586,8 @@ class _HomeState extends State<Home> {
 //             GridView.count(
 //               crossAxisCount: 2,
 //               shrinkWrap: true,
-//               physics: const NeverScrollableScrollPhysics(),
+//               physics:
+//                   const NeverScrollableScrollPhysics(),
 //               crossAxisSpacing: 12,
 //               mainAxisSpacing: 12,
 //               childAspectRatio: .9,
@@ -517,31 +624,43 @@ class _HomeState extends State<Home> {
 //             Container(
 //               padding: const EdgeInsets.all(20),
 //               decoration: BoxDecoration(
-//                 borderRadius: BorderRadius.circular(20),
+//                 borderRadius:
+//                     BorderRadius.circular(20),
 //                 gradient: const LinearGradient(
-//                   colors: [Colors.deepPurple, Colors.blue],
+//                   colors: [
+//                     Colors.deepPurple,
+//                     Colors.blue,
+//                   ],
 //                 ),
 //               ),
 //               child: const Row(
 //                 children: [
-//                   Icon(Icons.bolt, color: Colors.yellow, size: 40),
+//                   Icon(
+//                     Icons.bolt,
+//                     color: Colors.yellow,
+//                     size: 40,
+//                   ),
 //                   SizedBox(width: 15),
 //                   Expanded(
 //                     child: Column(
-//                       crossAxisAlignment: CrossAxisAlignment.start,
+//                       crossAxisAlignment:
+//                           CrossAxisAlignment.start,
 //                       children: [
 //                         Text(
 //                           "Daily Challenge",
 //                           style: TextStyle(
 //                             color: Colors.white,
 //                             fontSize: 18,
-//                             fontWeight: FontWeight.bold,
+//                             fontWeight:
+//                                 FontWeight.bold,
 //                           ),
 //                         ),
 //                         SizedBox(height: 5),
 //                         Text(
 //                           "Play today's special quiz and win bonus points.",
-//                           style: TextStyle(color: Colors.white70),
+//                           style: TextStyle(
+//                             color: Colors.white70,
+//                           ),
 //                         ),
 //                       ],
 //                     ),
@@ -565,7 +684,10 @@ class _HomeState extends State<Home> {
 //     return Container(
 //       decoration: BoxDecoration(
 //         borderRadius: BorderRadius.circular(20),
-//         image: DecorationImage(image: NetworkImage(image), fit: BoxFit.cover),
+//         image: DecorationImage(
+//           image: NetworkImage(image),
+//           fit: BoxFit.cover,
+//         ),
 //       ),
 //       child: Container(
 //         decoration: BoxDecoration(
@@ -573,18 +695,27 @@ class _HomeState extends State<Home> {
 //           gradient: const LinearGradient(
 //             begin: Alignment.topCenter,
 //             end: Alignment.bottomCenter,
-//             colors: [Colors.transparent, Colors.black87],
+//             colors: [
+//               Colors.transparent,
+//               Colors.black87,
+//             ],
 //           ),
 //         ),
 //         child: Column(
-//           mainAxisAlignment: MainAxisAlignment.end,
+//           mainAxisAlignment:
+//               MainAxisAlignment.end,
 //           children: [
-//             const Icon(Icons.emoji_events, color: Colors.amber, size: 30),
+//             const Icon(
+//               Icons.emoji_events,
+//               color: Colors.amber,
+//               size: 30,
+//             ),
 //             Text(
 //               prize,
 //               style: const TextStyle(
 //                 color: Colors.amber,
-//                 fontWeight: FontWeight.bold,
+//                 fontWeight:
+//                     FontWeight.bold,
 //               ),
 //             ),
 //             const SizedBox(height: 5),
@@ -593,7 +724,8 @@ class _HomeState extends State<Home> {
 //               style: const TextStyle(
 //                 color: Colors.white,
 //                 fontSize: 18,
-//                 fontWeight: FontWeight.bold,
+//                 fontWeight:
+//                     FontWeight.bold,
 //               ),
 //             ),
 //             const SizedBox(height: 15),
