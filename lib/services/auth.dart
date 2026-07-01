@@ -37,6 +37,7 @@ Future<User?> signWithGoogle() async {
   await Localdb.saveuserid(user.uid);
   await Localdb.savename(user.displayName.toString());
   await Localdb.saveimageurl(user.photoURL.toString());
+  await Localdb.saveLogin(true);
   print(user);
   // }catch(e){
   //   print("ERROR OCCURED IN SIGN IN");
@@ -48,5 +49,6 @@ Future<String> signOut() async {
   await googleSignIn.signOut();
   await _auth.signOut();
   await Localdb.saveuserid("null");
+  await Localdb.saveLogin(true);
   return "success";
 }

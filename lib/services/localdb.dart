@@ -7,6 +7,7 @@ class Localdb {
   static final rkey = "fkldsfgfrldsf";
   static final nkey = "fkldsfldsfgrrf";
   static final pkey = "fkldsfldsfwww"; 
+  static final loginkey = "isLoggedIn";
 
   static Future<bool> saveuserid(String userid) async {
     SharedPreferences preference = await SharedPreferences.getInstance();
@@ -20,6 +21,17 @@ class Localdb {
     return  preference.getString(useridkey);
   }
 
+
+
+static Future<bool> saveLogin(bool value) async {
+  SharedPreferences preference = await SharedPreferences.getInstance();
+  return await preference.setBool(loginkey, value);
+}
+
+static Future<bool> getLogin() async {
+  SharedPreferences preference = await SharedPreferences.getInstance();
+  return preference.getBool(loginkey) ?? false;
+}
   
   static Future<bool> savemoney(String money) async {
     SharedPreferences preference = await SharedPreferences.getInstance();
